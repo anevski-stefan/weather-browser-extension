@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .choose-option {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        line-height: 2;
+      }
+
+      body {
+        width: 300px;
+      }
+
+      .wrapper p,
+      .wrapper span {
+        font-size: 1rem;
+      }
+
+      .current-weather,
+      h1 {
+        text-align: center;
+      }
+
+      .choose-option label {
+        font-size: 1.2rem;
+      }
+
+      .choose-option input {
+        padding: 5px;
+        font-size: 1rem;
+      }
+
+      .choose-option select {
+        padding: 5px;
+        font-size: 1rem;
+      }
+
+      .submit-btn {
+        margin-top: 15px;
+        padding: 5px 15px;
+        border-radius: 4px;
+        border: 1px solid gray;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Weather extension</h1>
+    <div class="choose-option">
+      <label for="chooseOption">Choose your preference: </label>
+      <select name="chooseOption" id="chooseOption">
+        <option value="current-weather-info">Current weather info</option>
+        <!-- <option value="5-days-forecast">5 days forecast</option> -->
+      </select>
+
+      <label for="city">City: </label>
+      <input type="text" id="city" autocomplete="off" />
+
+      <label for="measurement-option">Measurement preference</label>
+      <select name="measurement-option" id="measurement-option">
+        <option value="metric">Celsius</option>
+        <option value="imperial">Fahrenheit</option>
+      </select>
+      <div class="submit-container">
+        <button class="submit-btn" onclick="fetchData">Submit</button>
+      </div>
+    </div>
+
+    <!-- Current weather option  -->
+    <div class="current-weather">
+      <h2>
+        Info about <span class="country-display"></span>,
+        <span class="city-display"></span>
+      </h2>
+      <div class="wrapper">
+        <p>Temperature: <span class="temperature"></span></p>
+        <p>Description: <span class="description"></span></p>
+        <p>Sunrise: <span class="sunrise"></span></p>
+        <p>Sunset: <span class="sunset"></span></p>
+        <p><img src="" alt="weather-icon" class="icon" /></p>
+        <p><button class="back">Back</button></p>
+      </div>
+    </div>
+
+    <!-- 5 day forecast option -->
+    <div class="day-forecast"></div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
