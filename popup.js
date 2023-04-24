@@ -27,8 +27,10 @@ async function fetchData(cityName, measurement) {
       if (response.ok) {
         const data = await response.json();
         return data;
+      } else if (response.status === 404) {
+        return { error: "City not found" };
       } else {
-        console.log('Error while fetching data');
+        console.log("Error while fetching data");
         return null;
       }
     } catch (error) {
@@ -47,22 +49,27 @@ async function fetchData(cityName, measurement) {
     const cityValue = city.value;
 
     if (!cityValue || /[^a-zA-Z\s]+/.test(cityValue)) {
-        const okClicked = alert("Please enter a valid city name");
-        if (okClicked) {
-            city.value = "";
-            chooseCointainer.style.display = "flex";
-        }
+      const confirmed = window.confirm("Please enter a valid city name");
+      if (confirmed) {
+        city.value = "";
+        chooseCointainer.style.display = "flex";
         return;
+      }
+      else {
+        city.focus();
+        return;
+      }
     }
 
     if(option === "current-weather-info"){
         fetchData(cityValue, measurement)
             .then(data => {
-                if (!data || data.cod === "404") {
-                    alert(`${cityValue} is not a valid city`);
-                    chooseCointainer.style.display = "flex";
-                    return;
-                }
+              if (data.error) {
+                alert(`${cityValue} is not a valid city`);
+                city.value = "";
+                chooseCointainer.style.display = "flex";
+                return;
+              }
                     currentWeather.style.display = "block";
                     countryDisplay.textContent = data.sys.country;
                     cityDisplay.textContent = data.name;
