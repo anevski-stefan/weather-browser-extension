@@ -1,32 +1,61 @@
-
 # Weather Browser Extension
 
-Weather Browser Extension is a browser extension that displays the current weather conditions for your prefered location in your browser's toolbar. This extension is designed to be lightweight and easy to use, providing you with quick access to the latest weather information without having to leave your browser.
+A simple and efficient browser extension that provides real-time weather information right in your browser's toolbar. This extension allows you to quickly check weather conditions for any location without leaving your current webpage.
 
+## Features
 
+- Real-time weather information
+- Location-based weather updates
+- Customizable temperature units (Celsius/Fahrenheit)
+- Clean and intuitive user interface
+- Lightweight and fast performance
 
+## Project Structure
 
-
+```
+weather-browser-extension/
+├── manifest.json      # Extension configuration
+├── popup.html        # Extension popup interface
+├── popup.js         # Main extension logic
+├── LICENSE          # MIT license
+└── README.md        # Project documentation
+```
 
 ## Installation
 
-To get started with this project, simply download or clone the repository to your local machine.
+To install this extension in development mode:
 
-To install the extension, follow these steps:
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/yourusername/weather-browser-extension.git
+   ```
 
-1. Download or clone the repository.
-2. Open your web browser and navigate to the extensions page.
-3. Enable developer mode.
-4. Click on "Load unpacked" and select the downloaded/ cloned repository folder.
-5. The extension should now be installed and ready to use.
+2. Open Chrome/Chromium browser and navigate to:
+   - Chrome: `chrome://extensions/`
+   - Edge: `edge://extensions/`
 
+3. Enable "Developer mode" in the top-right corner
 
+4. Click "Load unpacked" and select the cloned repository folder
+
+5. The extension icon should appear in your browser's toolbar
 
 ## Usage
 
-Once the extension is installed, simply click on the icon in your browser's toolbar enter your preferred location and view the current weather conditions in that location. You can also change the temperature unit or updating the location.
+1. Click the extension icon in your browser's toolbar
+2. Enter your desired location in the search field
+3. View the current weather conditions for that location
+4. Toggle between Celsius and Fahrenheit using the temperature unit switch
+5. Update the location anytime by entering a new location name
 
+## Development
+
+This extension is built using:
+- HTML5
+- CSS3
+- JavaScript (ES6+)
+- Chrome Extensions API
 
 ## License
 
-This project is licensed under the MIT license. See the [LICENSE](./LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
