@@ -10,17 +10,6 @@ A simple and efficient browser extension that provides real-time weather informa
 - Clean and intuitive user interface
 - Lightweight and fast performance
 
-## Project Structure
-
-```
-weather-browser-extension/
-├── manifest.json      # Extension configuration
-├── popup.html        # Extension popup interface
-├── popup.js         # Main extension logic
-├── LICENSE          # MIT license
-└── README.md        # Project documentation
-```
-
 ## Installation
 
 To install this extension in development mode:
